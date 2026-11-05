@@ -49,6 +49,4 @@ Kasutaja saab veebilehel:
 
 Projekt on valmis, kui veebilehel on küünalde tutvustus ja vähemalt kolm toodet koos nimede, hindade ning lõhnakirjeldustega; kasutaja saab tooteid ostukorvi lisada, koguseid muuta ja summat näha; tellimuse e-kirja koostamine töötab; leht on loetav nii telefonis kui ka arvutis; ning projekti README sisaldab plaani ja GitHubi repositooriumis on vajalikud failid.
 
-## Täpsustus
 
-See fail kirjeldab projekti plaani. Ülesande esitamiseks lisa GitHubi repositooriumi link, kus see `README.md` asub. Veebilehe programmeerimine ei ole selle plaani esitamiseks vajalik.
