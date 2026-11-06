@@ -1,11 +1,11 @@
-# Hamar
+# Sume
 Hämara käsitöö küünalde projekti plaan
 
-# Hämar – käsitöö küünalde veebipood
+# Sume – käsitöö küünalde veebipood
 
 ## 1. Projekti nimi
 
-**Hämar – käsitöö küünalde tutvustus- ja müügileht.**
+**Sume – käsitöö küünalde tutvustus- ja müügileht.**
 
 ## 2. Eesmärk
 
