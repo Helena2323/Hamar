@@ -3,18 +3,19 @@
 Uuendatud: 20.11.2026
 
 ## Tehtud
-- Arenduskeskkond on seadistatud.
-- GitHubi autentimine ja sünkroonimine toimivad.
+- Arenduskeskkond ja GitHub on seadistatud.
 - Äriplaan, esitlus ja projektiplaan on analüüsitud.
 - Loodud index.html ja style.css.
-- Veebilehe põhistruktuur ja esmane kujundus töötavad.
+- Lisatud toimiv navigatsioonimenüü ja viis leheosa.
+- Lisatud ja kujundatud kolm näidistoodet.
+- Kontrollitud veebilehe toimimist brauseris.
 - Töölogi on uuendatud.
 
 ## Järgmised sammud
-- Lisada navigatsioonimenüü.
-- Lisada tootevalik ja tootepildid.
+- Lisada tootepildid.
 - Arendada ostukorvi funktsionaalsust.
 - Lisada tellimuse e-kirja koostamine.
+- Lisada uudiskirjaga liitumise vorm.
 - Testida ja avaldada veebileht.
 
 ## Töö jätkamine

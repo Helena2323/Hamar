@@ -27,3 +27,51 @@ footer {
     padding: 20px;
     background-color: #e8dfd3;
 }
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 20px;
+    background-color: #e8dfd3;
+}
+
+nav a {
+    color: #382b23;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 40px 0;
+}
+
+.tootevalik {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.toode {
+    background-color: #ffffff;
+    border: 1px solid #e8dfd3;
+    border-radius: 12px;
+    padding: 25px;
+    width: 260px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.toode h3 {
+    font-size: 22px;
+}
+
+.toode p:last-child {
+    font-weight: bold;
+    font-size: 20px;
+}

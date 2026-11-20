@@ -34,3 +34,14 @@
 - Kontrollitud veebilehe toimimist brauseris.
 - Tulemus: HTML ja CSS töötavad.
 - Järgmine samm: lisada menüü ja tootevalik.
+
+## 20.11.2026 – Menüü ja tootevaliku arendamine
+
+- Lisatud navigatsioonimenüü ja viis leheosa.
+- Kujundatud menüü CSS-iga.
+- Lisatud kolm toodet koos näidishindade ja lõhnakirjeldustega.
+- Kujundatud tootekaardid.
+- Parandatud HTML-i struktuuriviga.
+- Kontrollitud menüü toimimist ja toodete kuvamist brauseris.
+- Tulemus: menüü töötab ja tootekaardid kuvatakse õigesti.
+- Järgmine samm: lisada tootepildid ja ostukorvi funktsioonid.
