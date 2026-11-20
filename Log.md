@@ -55,3 +55,14 @@
 - Testitud toodete lisamist ja kogusumma arvutamist.
 - Tulemus: ostukorvi esmane funktsionaalsus töötab.
 - Järgmine samm: koguste muutmine ja toodete eemaldamine.
+
+## 20.11.2026 – Projekti edasiarenduse planeerimine
+
+- Täiendatud projektiplaani vastavalt äriplaanile ja esitlusele.
+- Otsustatud luua iseseisvalt hallatav veebipood.
+- Kavandatud Supabase'i andmebaasi kasutamine.
+- Planeeritud turvaline halduspaneel toodete ja sisu haldamiseks.
+- Eelistatud tasuta lahendusi.
+- Uuendatud README.md ja HANDOFF.md.
+- Tulemus: koostatud täiendatud arendusplaan.
+- Järgmine samm: eraldada tooteandmed veebilehe kujundusest.

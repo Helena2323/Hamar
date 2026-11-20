@@ -50,3 +50,17 @@ Kasutaja saab veebilehel:
 Projekt on valmis, kui veebilehel on küünalde tutvustus ja vähemalt kolm toodet koos nimede, hindade ning lõhnakirjeldustega; kasutaja saab tooteid ostukorvi lisada, koguseid muuta ja summat näha; tellimuse e-kirja koostamine töötab; leht on loetav nii telefonis kui ka arvutis; ning projekti README sisaldab plaani ja GitHubi repositooriumis on vajalikud failid.
 
 
+## 8. Projekti edasiarendus
+
+- Eraldada tooteandmed veebilehe kujundusest.
+- Ühendada veebileht Supabase'i andmebaasiga.
+- Luua turvalise sisselogimisega halduspaneel.
+- Võimaldada toodete lisamist, muutmist ja eemaldamist.
+- Võimaldada tootepiltide, hindade ja laoseisu haldamist.
+- Lisada hooajaliste kollektsioonide ja sooduspakkumiste haldamine.
+- Lisada eritellimuste ja kinkekomplektide võimalus.
+- Võimaldada veebilehe sisu muutmist ilma programmeerimata.
+- Lisada tellimuste haldamise võimalus.
+- Täiustada veebilehe kujundust ja kasutajamugavust.
+- Testida veebilehe funktsionaalsust ja turvalisust.
+- Valmistada veebipood ette tegelikuks äriliseks kasutamiseks.
