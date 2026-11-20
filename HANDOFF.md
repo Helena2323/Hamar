@@ -6,16 +6,18 @@ Uuendatud: 20.11.2026
 
 - Arenduskeskkond ja GitHub on seadistatud.
 - Äriplaan, esitlus ja projektiplaan on analüüsitud.
-- Loodud index.html, style.css ja script.js.
+- Loodud index.html, style.css, script.js ja tooted.js.
 - Lisatud navigatsioonimenüü ja kolm näidistoodet.
 - Veebileht on avaldatud GitHub Pagesis.
-- Ostukorvi toodete lisamine ja kogusumma arvutamine töötavad.
-- Projektiplaani on täiendatud.
+- Tooteandmed on HTML-ist eraldatud.
+- Tootekaardid luuakse automaatselt JavaScriptiga.
+- Ostukorvi lisamine ja kogusumma arvutamine töötavad.
+- Projektiplaan ja töölogi on uuendatud.
 
 ## Järgmised sammud
 
-- Eraldada tooteandmed veebilehe kujundusest.
-- Täiendada ostukorvi funktsionaalsust.
+- Lisada ostukorvis koguste muutmine ja toodete eemaldamine.
+- Kujundada ostukorv ja nupud.
 - Ühendada Supabase'i andmebaas.
 - Luua turvaline halduspaneel.
 - Lisada tootepildid ja kollektsioonid.

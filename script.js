@@ -1,11 +1,29 @@
-const tooted = {
-    jaatis: { nimi: "Jäätisekokteili küünal", hind: 2490 },
-    latte: { nimi: "Piparkoogi-latte küünal", hind: 2990 },
-    roos: { nimi: "Roos klaasis", hind: 1990 }
-};
+const tootevalik = document.querySelector(".tootevalik");
 
+for (const [id, toode] of Object.entries(tooted)) {
+    const kaart = document.createElement("article");
+    kaart.className = "toode";
+
+    const nimi = document.createElement("h3");
+    nimi.textContent = toode.nimi;
+
+    const kirjeldus = document.createElement("p");
+    kirjeldus.textContent = toode.kirjeldus;
+
+    const hind = document.createElement("p");
+    hind.textContent = (toode.hind / 100)
+        .toFixed(2).replace(".", ",") + " €";
+
+    const nupp = document.createElement("button");
+    nupp.type = "button";
+    nupp.className = "lisa-ostukorvi";
+    nupp.dataset.id = id;
+    nupp.textContent = "Lisa ostukorvi";
+
+    kaart.append(nimi, kirjeldus, hind, nupp);
+    tootevalik.appendChild(kaart);
+}
 const ostukorv = {};
-
 document.querySelectorAll(".lisa-ostukorvi").forEach(nupp => {
     nupp.addEventListener("click", () => {
         const id = nupp.dataset.id;

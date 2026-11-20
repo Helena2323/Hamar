@@ -66,3 +66,14 @@
 - Uuendatud README.md ja HANDOFF.md.
 - Tulemus: koostatud täiendatud arendusplaan.
 - Järgmine samm: eraldada tooteandmed veebilehe kujundusest.
+
+## 20.11.2026 – Tooteandmete eraldamine
+
+- Loodud tooted.js fail.
+- Eraldatud tootenimed, kirjeldused ja hinnad HTML-ist.
+- Lisatud tootekaartide automaatne loomine JavaScriptiga.
+- Ühendatud tooteandmed ostukorviga.
+- Parandatud muutuja topeltdeklaratsiooni viga.
+- Testitud kõigi kolme toote lisamist ostukorvi.
+- Tulemus: ostukorv töötab ja kogusumma 74,70 € on korrektne.
+- Järgmine samm: lisada koguste muutmine ja toodete eemaldamine.
