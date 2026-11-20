@@ -45,3 +45,13 @@
 - Kontrollitud menüü toimimist ja toodete kuvamist brauseris.
 - Tulemus: menüü töötab ja tootekaardid kuvatakse õigesti.
 - Järgmine samm: lisada tootepildid ja ostukorvi funktsioonid.
+
+## 20.11.2026 – Ostukorvi arendamine
+
+- Avaldatud veebileht GitHub Pagesis.
+- Lisatud toodetele ostukorvi nupud.
+- Loodud script.js ja ühendatud HTML-iga.
+- Tuvastatud ja lahendatud faili nimega seotud viga.
+- Testitud toodete lisamist ja kogusumma arvutamist.
+- Tulemus: ostukorvi esmane funktsionaalsus töötab.
+- Järgmine samm: koguste muutmine ja toodete eemaldamine.
