@@ -1,6 +1,6 @@
 # Hämara projekti hetkeseis
 
-Uuendatud: 19.11.2026
+Uuendatud: 20.11.2026
 
 ## Tehtud
 - Git on paigaldatud ja seadistatud.
@@ -11,7 +11,7 @@ Uuendatud: 19.11.2026
 
 ## Järgmised sammud
 - Vaadata üle README.md projektiplaan.
-- Analüüsida referaati ja PowerPointi esitlust.
+- Analüüsida äriplaani ja PowerPointi esitlust.
 - Kontrollida vastavust õpetaja nõuetele.
 - Alustada veebilehe arendamist.
 

@@ -18,3 +18,9 @@
 - Sünkroonitud projekt edukalt GitHubiga.
 - Tulemus: arenduskeskkond on tööks valmis.
 - Järgmine samm: vaadata üle projektiplaan ja õppematerjalid.
+
+## 20.11.2026 – Projekti jätkamine
+
+- Täpsustatud projekti alusmaterjalid: äriplaan ja PowerPointi esitlus.
+- Projekti lõplik nimi on Hämar.
+- Uuendatud HANDOFF.md.
