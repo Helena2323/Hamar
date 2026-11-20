@@ -24,3 +24,13 @@
 - Täpsustatud projekti alusmaterjalid: äriplaan ja PowerPointi esitlus.
 - Projekti lõplik nimi on Hämar.
 - Uuendatud HANDOFF.md.
+
+## 20.11.2026 – Veebilehe arendamise alustamine
+
+- Analüüsitud äriplaani ja PowerPointi esitlust.
+- Vaadatud üle README.md projektiplaan.
+- Loodud index.html ja style.css.
+- Lisatud veebilehe põhistruktuur ja esmane kujundus.
+- Kontrollitud veebilehe toimimist brauseris.
+- Tulemus: HTML ja CSS töötavad.
+- Järgmine samm: lisada menüü ja tootevalik.

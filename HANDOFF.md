@@ -3,17 +3,19 @@
 Uuendatud: 20.11.2026
 
 ## Tehtud
-- Git on paigaldatud ja seadistatud.
-- GitHubi repositoorium on kloonitud.
-- AGENTS.md, Log.md ja HANDOFF.md on loodud.
+- Arenduskeskkond on seadistatud.
 - GitHubi autentimine ja sünkroonimine toimivad.
-- Arenduskeskkond on tööks valmis.
+- Äriplaan, esitlus ja projektiplaan on analüüsitud.
+- Loodud index.html ja style.css.
+- Veebilehe põhistruktuur ja esmane kujundus töötavad.
+- Töölogi on uuendatud.
 
 ## Järgmised sammud
-- Vaadata üle README.md projektiplaan.
-- Analüüsida äriplaani ja PowerPointi esitlust.
-- Kontrollida vastavust õpetaja nõuetele.
-- Alustada veebilehe arendamist.
+- Lisada navigatsioonimenüü.
+- Lisada tootevalik ja tootepildid.
+- Arendada ostukorvi funktsionaalsust.
+- Lisada tellimuse e-kirja koostamine.
+- Testida ja avaldada veebileht.
 
 ## Töö jätkamine
 - Järgi AGENTS.md tööreegleid.
