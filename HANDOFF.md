@@ -49,3 +49,12 @@ Uuendatud: 21.11.2026
 - Kontrolli ja testi iga arendusetappi.
 - Kasuta tokeneid säästlikult.
 - Eelista tasuta lahendusi.
+
+## Viimane seis – 21.11.2026
+
+- Hämara värvipalett on rakendatud.
+- Logo on täiendatud täpi ja kaarja joonega.
+- Tootekaardid, nupud ja ostukorv on kujundatud.
+- Lisatud mobiilivaate CSS-reeglid.
+
+Järgmisena lisada avalehe küünlafoto ja testida mobiilivaadet.

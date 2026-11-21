@@ -88,3 +88,12 @@
 - Testitud tühja ostukorvi säilimist.
 
 Tulemus: kõik testid edukalt läbitud.
+
+### 21.11.2026 – Veebilehe kujundus
+
+- Rakendatud kinnitatud Hämara värvipalett.
+- Kujundatud tootekaarte, nuppe ja ostukorvi.
+- Lisatud mobiilivaate CSS-reeglid.
+- Täiendatud logo ploomipruuni täpi ja kaarja joonega.
+- Kontrollitud kujundust brauseris.
+- Valitud avalehe foto edasiseks kasutamiseks.
