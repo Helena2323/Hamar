@@ -77,3 +77,14 @@
 - Testitud kõigi kolme toote lisamist ostukorvi.
 - Tulemus: ostukorv töötab ja kogusumma 74,70 € on korrektne.
 - Järgmine samm: lisada koguste muutmine ja toodete eemaldamine.
+
+## 21.11.2026 – Ostukorvi täiustamine
+
+- Lisatud toodete koguste suurendamine ja vähendamine.
+- Lisatud toodete eemaldamise võimalus.
+- Täiustatud kogusumma automaatset arvutamist.
+- Lisatud ostukorvi salvestamine localStorage abil.
+- Testitud ostukorvi säilimist pärast lehe värskendamist.
+- Testitud tühja ostukorvi säilimist.
+
+Tulemus: kõik testid edukalt läbitud.
