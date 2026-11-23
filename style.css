@@ -21,7 +21,7 @@ body {
 header {
     background-color: var(--elevandiluu);
     text-align: center;
-    padding: 35px 20px;
+  padding: 24px 20px 8px;
 }
 
 header h1 {
@@ -35,15 +35,12 @@ header h1::after {
     content: "";
     display: block;
     width: 60px;
-    height: 14px;
-    margin: 0 auto 10px;
-    border-bottom: 2px solid var(--ploomipruun);
-    border-radius: 0 0 50% 50%;
-    background: radial-gradient(
-        circle at center,
-        var(--ploomipruun) 3px,
-        transparent 3px
-    );
+    height: 28px;
+    margin: 8px auto 10px;
+        background-image: url("logo-leek.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 nav {
     display: flex;

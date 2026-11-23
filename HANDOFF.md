@@ -58,3 +58,12 @@ Uuendatud: 21.11.2026
 - Lisatud mobiilivaate CSS-reeglid.
 
 Järgmisena lisada avalehe küünlafoto ja testida mobiilivaadet.
+
+## Viimane seis – 23.11.2026
+
+- Hämara logo on täiendatud väikese leegiga.
+- Loodud logo-leek.svg fail.
+- Päise kujundus on korrastatud.
+- Logo ja päis on brauseris kontrollitud.
+
+Järgmine samm: lisada avalehele küünlafoto ja täiustada kujundust.

@@ -97,3 +97,18 @@ Tulemus: kõik testid edukalt läbitud.
 - Täiendatud logo ploomipruuni täpi ja kaarja joonega.
 - Kontrollitud kujundust brauseris.
 - Valitud avalehe foto edasiseks kasutamiseks.
+
+
+## 23.11.2026 – Hämara logo ja päise täiustamine
+
+- Asendatud logo all olev täpp väikese leegiga.
+- Loodud eraldi logo-leek.svg fail.
+- Parandatud SVG-faili süntaksiviga.
+- Ühendatud logo-leek.svg fail style.css-iga.
+- Kontrollitud leegi ja kaare kuvamist brauseris.
+- Vähendatud päise tühja ruumi.
+- Kontrollitud avalehe uut kujundust.
+
+Tulemus: logo ja päis kuvatakse õigesti.
+
+Järgmine samm: täiustada avalehe tutvustusala ja lisada küünlafoto.
