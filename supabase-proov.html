@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hämar – Supabase'i ühenduse proov</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #F6F0EA;
+            color: #392E2B;
+        }
+
+        body {
+            margin: 0;
+            padding: 32px 16px;
+        }
+
+        main {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 32px;
+            border: 1px solid #E5D4CB;
+            border-radius: 12px;
+            background: #FFFFFF;
+        }
+
+        h1 {
+            color: #62464A;
+        }
+
+        #status {
+            padding: 16px;
+            border-radius: 8px;
+            background: #F6F0EA;
+        }
+
+        li + li {
+            margin-top: 8px;
+        }
+
+        @media (max-width: 520px) {
+            main {
+                padding: 24px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Supabase'i ühenduse proov</h1>
+        <p>See leht loeb avaldatud toodete ID-d ja nimed tabelist <code>public.tooted</code>. Andmeid ei muudeta.</p>
+        <p id="status" role="status" aria-live="polite">Ühendust pole veel kontrollitud.</p>
+        <ul id="tooted" hidden></ul>
+    </main>
+
+    <script>
+        // Siia sobivad ainult Supabase'i Project URL ja publishable-võti.
+        // Ära lisa siia secret- ega service_role-võtit.
+       
+const SUPABASE_URL = "https://opzosebdxyhowkefntkc.supabase.co";
+
+    const SUPABASE_PUBLISHABLE_KEY = "PASTA_SII_SUPABASE_PUBLISHABLE_KEY";
+
+        const olek = document.querySelector("#status");
+        const toodeteLoend = document.querySelector("#tooted");
+        const secretVotiSisestatud =
+            SUPABASE_PUBLISHABLE_KEY.startsWith("sb_secret_");
+        const seadistusPuudub =
+            SUPABASE_URL.startsWith("PASTA_") ||
+            SUPABASE_PUBLISHABLE_KEY.startsWith("PASTA_");
+
+        if (secretVotiSisestatud) {
+            olek.textContent =
+                "Sisestatud võti on secret-võti. Asenda see Supabase'i publishable-võtmega.";
+        } else if (seadistusPuudub) {
+            olek.textContent =
+                "Project URL või publishable-võti puudub. Lisa puuduv väärtus Supabase'i seadistustest.";
+        } else {
+            kontrolliYhendust();
+        }
+
+        function laadiSupabaseTeek() {
+            return new Promise((resolve, reject) => {
+                const teek = document.createElement("script");
+                teek.src = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.110.7";
+                teek.onload = () => resolve();
+                teek.onerror = () => reject(new Error("Supabase'i teegi laadimine ebaõnnestus."));
+                document.head.appendChild(teek);
+            });
+        }
+
+        async function kontrolliYhendust() {
+            olek.textContent = "Kontrollin Supabase'i ühendust…";
+
+            try {
+                await laadiSupabaseTeek();
+
+                if (!window.supabase || typeof window.supabase.createClient !== "function") {
+                    throw new Error("Supabase'i kliendi loomine ebaõnnestus.");
+                }
+
+                const klient = window.supabase.createClient(
+                    SUPABASE_URL,
+                    SUPABASE_PUBLISHABLE_KEY,
+                    {
+                        db: { schema: "public" },
+                        auth: {
+                            persistSession: false,
+                            autoRefreshToken: false,
+                            detectSessionInUrl: false
+                        }
+                    }
+                );
+
+                const { data, error } = await klient
+                    .from("tooted")
+                    .select("id, nimi")
+                    .eq("avaldatud", true)
+                    .order("id", { ascending: true });
+
+                if (error) {
+                    throw error;
+                }
+
+                if (data.length === 0) {
+                    olek.textContent =
+                        "Ühendus toimib, kuid avaldatud tooteid veel pole.";
+                    return;
+                }
+
+                const read = document.createDocumentFragment();
+
+                for (const toode of data) {
+                    const rida = document.createElement("li");
+                    rida.textContent = `ID ${toode.id}: ${toode.nimi}`;
+                    read.appendChild(rida);
+                }
+
+                toodeteLoend.replaceChildren(read);
+                toodeteLoend.hidden = false;
+                olek.textContent = `Ühendus toimib. Leiti ${data.length} avaldatud toodet.`;
+            } catch (error) {
+                olek.textContent =
+                    `Ühenduse kontroll ebaõnnestus: ${error.message} Kontrolli Project URL-i, publishable-võtit, tabeli veerge ja RLS-reegleid.`;
+            }
+        }
+    </script>
+</body>
+
+</html>

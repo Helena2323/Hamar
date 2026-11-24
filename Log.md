@@ -136,3 +136,21 @@ Järgmine samm: täiustada avalehe tutvustusala ja lisada küünlafoto.
 - Otsus: järgmine arendusetapp keskendub päris küünlafotode lisamisele ja toodete esitluse täiustamisele.
 - Tulemus: kõik kirjeldatud ostukorvi toimingud töötasid.
 - Järgmine samm: lisada päris küünlafotod ja täiustada toodete esitlust.
+
+## 24.11.2026 – Supabase'i ainult lugemiseks proovileht
+
+- Eesmärk: kontrollida turvaliselt ühendust Supabase'i avaldatud toodete tabeliga.
+- Tegevused: loodud eraldi proovileht, mis küsib tabelist `public.tooted` ainult avaldatud toodete ID-d ja nimed; lisatud selged seadistuse, tühja tulemuse ja vea teated.
+- Otsused: kasutada ainult publishable-võtit; mitte muuta Supabase'i andmeid ega lisada proovilehte poe menüüsse.
+- Kontroll: proovileht avati brauseris ja kontrolliti puuduva seadistuse teadet. Päris Supabase'i päringut ei saanud kontrollida, sest projekti URL ja publishable-võti puuduvad.
+- Tulemus: proovileht on valmis seadistamiseks; tühja avaldatud toodete loendi korral kuvab see ühenduse õnnestumise teate.
+- Järgmine samm: lisada proovilehele Supabase'i Project URL ja publishable-võti ning kontrollida anonüümset lugemist RLS-reeglitega.
+
+## 24.11.2026 – Tööpäeva lõpetamine ja ühendustesti ettevalmistus
+
+- Eesmärk: fikseerida projekti hetkeseis enne töö lõpetamist.
+- Tegevused: kontrolliti proovilehe seadistust; tuvastatud secret-vormingus võti eemaldati ning publishable-võtme kohale jäeti kohatäitja. Live Server on paigaldatud.
+- Otsused: API võtmete väärtusi ega paroole ei lisata dokumentidesse; päris Supabase'i päring tehakse alles õige publishable-võtmega.
+- Kontroll: proovileht avati brauseris ja kontrolliti puuduva seadistuse teadet. `git diff --check` läbis veata. Node.js pole keskkonnas saadaval, seega `node --check` käivitamine ebaõnnestus.
+- Tulemus: Supabase'i ühendustest on pooleli; ostukorvi ega poe kujundust ei muudetud. Muudatused on kohalikus tööpuus ning commit'i ega push'i ei tehtud.
+- Järgmine samm: avada `supabase-proov.html` Live Serveriga, lisada ainult Supabase'i publishable-võti ning kontrollida ühendust ja tühja avaldatud toodete loendi teadet.
