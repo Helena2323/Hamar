@@ -1,6 +1,6 @@
 # Hämara projekti hetkeseis
 
-Uuendatud: 21.11.2026
+Uuendatud: 24.11.2026
 
 ## Tehtud
 
@@ -67,3 +67,13 @@ Järgmisena lisada avalehe küünlafoto ja testida mobiilivaadet.
 - Logo ja päis on brauseris kontrollitud.
 
 Järgmine samm: lisada avalehele küünlafoto ja täiustada kujundust.
+
+## Viimane seis – 24.11.2026
+
+- Avalehe tutvustusala on kujundatud õrna CSS-valguslaigu, selgema teksti ja „Avasta küünlad” lingiga.
+- Kasutatud on kinnitatud värvipaletti; pilte ega väliseid teeke ei lisatud.
+- Logo, navigatsioon, ostukorv ja olemasolevad funktsioonid säilitati.
+- Lauaarvuti- ja mobiilivaates kontrolliti, et horisontaalset ülevoolu pole ning link viib toodete juurde.
+- Ostukorvis kontrolliti toote lisamist, koguse suurendamist ja vähendamist, koguhinna muutumist, toote eemaldamist ning sisu säilimist pärast lehe värskendamist; kõik toimis.
+
+Järgmine samm: lisada päris küünlafotod ja täiustada toodete esitlust.

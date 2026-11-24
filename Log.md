@@ -119,3 +119,20 @@ Järgmine samm: täiustada avalehe tutvustusala ja lisada küünlafoto.
 - Tegevused: aktiveeriti GitHub Copilot Student; kontrolliti AGENTS.md, Log.md ja HANDOFF.md faile; selgitati automaatse logimise võimalusi ja piiranguid.
 - Tulemus: logimise töövoog ja piirangud on selgitatud.
 - Järgmine samm: jätkata Hämara arendamist ja täiendada tegevuslogi iga tööetapi järel.
+
+## 24.11.2026 – Avalehe tutvustusala täiustamine
+
+- Eesmärk: kujundada avalehe tutvustusala elegantsemaks ja mobiilisõbralikuks.
+- Tegevused: uuendatud tutvustusala teksti ja lisatud toodete jaotisele viiv link; lisatud CSS-iga õrn valguslaik ning kohanduv paigutus.
+- Otsused: kasutada kinnitatud värvipaletti; mitte lisada pilte ega väliseid teeke; säilitada logo, navigatsioon ja olemasolevad funktsioonid.
+- Kontroll: vaadatud lehte brauseris lauaarvuti- ja mobiilivaates; kontrollitud, et horisontaalset ülevoolu pole, link avab toodete jaotise ning ostukorvi lisamine ja eemaldamine töötavad.
+- Tulemus: tutvustusala on uuendatud; ostukorv jäi pärast kontrolli tühjaks.
+- Järgmine samm: lisada originaalne küünlafoto siis, kui see on olemas, ning jätkata mobiilivaate kontrollimist.
+
+## 24.11.2026 – Ostukorvi brauserikontroll
+
+- Eesmärk: dokumenteerida ostukorvi põhjalik kontroll pärast avalehe tutvustusala täiustamist.
+- Tegevused: kontrolliti toote lisamist, koguse suurendamist ja vähendamist, koguhinna muutumist, toote eemaldamist ning ostukorvi sisu säilimist pärast lehe värskendamist.
+- Otsus: järgmine arendusetapp keskendub päris küünlafotode lisamisele ja toodete esitluse täiustamisele.
+- Tulemus: kõik kirjeldatud ostukorvi toimingud töötasid.
+- Järgmine samm: lisada päris küünlafotod ja täiustada toodete esitlust.
