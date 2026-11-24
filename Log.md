@@ -112,3 +112,10 @@ Tulemus: kõik testid edukalt läbitud.
 Tulemus: logo ja päis kuvatakse õigesti.
 
 Järgmine samm: täiustada avalehe tutvustusala ja lisada küünlafoto.
+
+## 24.11.2026 – Automaatse tegevuslogi kontrollkatse
+
+- Eesmärk: kontrollida tegevuslogi täiendamise töövoogu.
+- Tegevused: aktiveeriti GitHub Copilot Student; kontrolliti AGENTS.md, Log.md ja HANDOFF.md faile; selgitati automaatse logimise võimalusi ja piiranguid.
+- Tulemus: logimise töövoog ja piirangud on selgitatud.
+- Järgmine samm: jätkata Hämara arendamist ja täiendada tegevuslogi iga tööetapi järel.
