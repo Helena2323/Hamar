@@ -1,6 +1,6 @@
 # Hämara projekti hetkeseis
 
-Uuendatud: 24.11.2026
+Uuendatud: 25.11.2026
 
 ## Tehtud
 
@@ -20,7 +20,7 @@ Uuendatud: 24.11.2026
 ## Kinnitatud kujundus
 
 - Stiil: elegantne, hubane ja ajatu.
-- Logo: HÄMAR, väikese täpiga kirja all.
+- Logo: HÄMAR, väikese leegiga kirja all.
 - Elevandiluu: #F6F0EA
 - Kašmiir: #E5D4CB
 - Vanaroosa: #C5A2A1
@@ -98,3 +98,55 @@ Järgmine samm: lisada proovilehele Project URL ja publishable-võti ning kontro
 - Node.js pole saadaval, mistõttu `node --check` süntaksikontrolli ei saanud käivitada. Proovilehe skript laaditi brauseris puuduva seadistuse haruga.
 
 Järgmine samm: ava `supabase-proov.html` Live Serveriga, lisa Supabase'i publishable-võti ning kontrolli ühendust. Tühja tabeli korral peab leht teatama, et ühendus töötab, kuid avaldatud tooteid veel pole.
+
+## Töö jätkamine – 25.11.2026
+
+- Supabase'i proovilehe ühendus õnnestus ja päring tabelisse `public.tooted` töötas.
+- Tabel oli tühi ning olemas oli viis RLS-reeglit.
+- Toodete lisamise reeglis kontrolliti kindlat `auth.uid()` väärtust.
+- Veebilehe koodi ega andmebaasi selles etapis ei muudetud.
+
+Järgmine samm: selle kontrolli põhjal uut arendusetappi ei määratud.
+
+## Administraatori sisselogimine – 25.11.2026
+
+- Loodud eraldi `admin-login.html`; poe ostukorvi, tooteloogikat ega andmebaasi ei muudetud.
+- Supabase Auth kasutab e-posti/parooli ja publishable-võtit. Administraatoriõiguse kontroll nõuab serverist loetud `app_metadata.role=admin` väärtust; seda pole kasutajaandmetesse ega koodi vaikimisi määratud.
+- Admini vaade ei sisalda veel toodete lisamise, muutmise ega kustutamise funktsioone. Tulevased andmebaasitoimingud peavad olema RLS-iga kaitstud.
+- Varasema kontrolli järgi piirab olemasolev toodete lisamise RLS-reegel `auth.uid()` väärtust; selle kooskõla administraatori `app_metadata` rolliga pole kontrollitud.
+- Brauseris kontrolliti lehe ja Supabase'i teegi laadimist ning et administraatori ala on esialgu peidetud. Päris sisselogimist ja õiguse kontrolli pole kontoga testitud.
+- Git-ajaloos varem olnud salajase kujuga Supabase'i võtme kehtivus ja roteerimine on teadmata; ära kasuta vana võtit ning kontrolli/tühista see Supabase'i halduses.
+
+Järgmine samm: pärast ajaloolise võtme tühistamise kontrolli testida sisselogimist brauseris ühe administraatori- ja ühe mitte-administraatori kontoga.
+
+## Supabase'i Secret API võtme seis – 25.11.2026
+
+- Kasutaja kinnituse järgi kustutati Supabase'i default Secret API key; juhtpaneel kuvati teated „Successfully deleted secret key” ja „No secret API keys found”. Publishable-võti jäi alles.
+- Giti ajaloolist võtit kustutatud võtmega ei võrreldud. Seetõttu ei ole kinnitatud, et ajalooline võti oli kustutatud võti, ega märgita ajaloolise võtme riski lahendatuks.
+- Veebilehe koodi ega projektifaile selles etapis ei muudetud.
+
+Pooleli: ajaloolise võtme ja kustutatud võtme vastavus ning ajaloolise võtme tühistamise staatus on kinnitamata.
+
+## Brändinime ühtlustamine – 25.11.2026
+
+- Veebilehe logo kuvatakse ametliku nimega „Hämar“; halduspaneeli ja Supabase'i proovilehe pealkirjad kasutavad sama kuju.
+- Tavalises lausetekstis säilitati grammatiliselt korrektne „Hämara“; Log.md ajaloolisi sissekandeid ei muudetud.
+- Brauseris kontrolliti avalehte, Supabase'i proovilehte ja halduspaneeli. Proovilehe lugemispäring toimis ning tooteid ei tagastanud; administraatori sisselogimist ei testitud.
+
+## Logo kirjakuju taastamine – 25.11.2026
+
+- Kinnitatud logomärk on „HÄMAR“; CSS kuvab sõna suurtähtedega ning säilitab kirjastiili, tähevahe, leegi ja kaare.
+- Brauseris kontrolliti logo visuaalset kuju ja SVG-dekoratsiooni.
+- Halduspaneeli pealkiri „Hämar – halduspaneel“ säilis.
+
+## Halduspaneeli logo – 25.11.2026
+
+- `admin-login.html` päises kuvatakse kinnitatud HÄMARi logotüüp olemasoleva `logo-leek.svg` sümboli ja kaarega; all on eraldi „Halduspaneel“ pealkiri.
+- Mobiilivaate logo suurus on kohandatud; brauseris kontrolliti logo ja pealkirja.
+- Sisselogimisfunktsioone, värve ega turvakontrolle ei muudetud. Sisselogimist ei testitud.
+
+## Sisselogimisväljade kontroll – 25.11.2026
+
+- E-posti ja parooli väljad kontrolliti puhtas brauserivaates arvutis ja mobiilis ilma ajutise CSS-ita; mõlemad olid nähtavad, 44 px kõrged ning klaviatuurifookusega kasutatavad.
+- Mobiilivaates ei esinenud horisontaalset ülevoolu. Sisestusväljade väärtusi ei loetud, kuvata ega salvestatud.
+- Väljad olid korras ja koodimuudatust ei tehtud.

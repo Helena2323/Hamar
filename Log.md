@@ -154,3 +154,56 @@ Järgmine samm: täiustada avalehe tutvustusala ja lisada küünlafoto.
 - Kontroll: proovileht avati brauseris ja kontrolliti puuduva seadistuse teadet. `git diff --check` läbis veata. Node.js pole keskkonnas saadaval, seega `node --check` käivitamine ebaõnnestus.
 - Tulemus: Supabase'i ühendustest on pooleli; ostukorvi ega poe kujundust ei muudetud. Muudatused on kohalikus tööpuus ning commit'i ega push'i ei tehtud.
 - Järgmine samm: avada `supabase-proov.html` Live Serveriga, lisada ainult Supabase'i publishable-võti ning kontrollida ühendust ja tühja avaldatud toodete loendi teadet.
+
+## 25.11.2026 – Supabase'i ühenduse kontroll
+
+- Eesmärk: fikseerida Supabase'i proovilehe ühenduse ja RLS-reeglite kontrolli tulemused.
+- Kontroll: Supabase'i ühendus õnnestus ja päring tabelisse `public.tooted` töötas; tabel oli tühi ning olemas oli viis RLS-reeglit. Toodete lisamise reeglis kontrolliti kindlat `auth.uid()` väärtust.
+- Tulemus: ühendus ja päring toimisid. Veebilehe koodi ega andmebaasi selles etapis ei muudetud.
+
+## 25.11.2026 – Administraatori sisselogimise esimene etapp
+
+- Eesmärk: lisada eraldi administraatori sisselogimisleht ilma poe ostukorvi või tooteloogikat muutmata.
+- Tegevused: loodud `admin-login.html`, mis kasutab Supabase Authi e-posti ja parooliga sisselogimist ning ainult publishable-võtit. Administraatoriõigust kontrollitakse serverist loetud `app_metadata.role` väärtuse järgi; administraatori ID-d ega toote muutmise funktsioone ei lisatud.
+- Otsus: puuduv või vale administraatori roll keelab ligipääsu; andmebaasiõigused peavad jääma RLS-reeglitega jõustatuks.
+- Kontroll: brauseris laaditi leht, Supabase'i teek ja kontrolliti, et sisselogimisvorm kuvatakse ning administraatori ala on algselt peidetud. Päris kontoga sisselogimist ega rollikontrolli ei testitud.
+- Olemasoleva toodete lisamise RLS-reegli `auth.uid()` väärtuse ja `app_metadata.role` omavahelist kooskõla ei kontrollitud.
+- Turvarisk: Git-ajaloos oli varem salajase kujuga Supabase'i võti; selle kehtivus ja tühistamine/roteerimine on teadmata. Võtme väärtust ei kopeeritud.
+- Tulemus: esimese etapi kood on lisatud; sisselogimise edukust ei kinnitata.
+- Pooleli: kontrollida ja vajadusel roteerida ajalooline võti ning testida brauseris administraatori ja mitte-administraatori kontoga.
+
+## 25.11.2026 – Supabase'i Secret API võtme kustutamine
+
+- Tegevus: kasutaja kinnituse järgi kustutati Supabase'i default Secret API key; juhtpaneel kuvati teated „Successfully deleted secret key” ja „No secret API keys found”. Publishable-võti jäi alles.
+- Kontrollimata: Giti ajaloolist võtit kustutatud võtmega ei võrreldud.
+- Tulemus: kustutatud võtme ja ajaloolise võtme vastavus pole teada; ajaloolise võtme käsitlemist ei märgita lahendatuks.
+- Mõju: veebilehe koodi ega projektifaile ei muudetud.
+
+## 25.11.2026 – Brändinime ühtlustamine
+
+- Eesmärk: kasutada veebiliidese brändinimena muutumatut kuju „Hämar“.
+- Tegevused: logo CSS-i suurtähe teisendus eemaldati; halduspaneeli ja Supabase'i proovilehe pealkirjad ühtlustati. HANDOFF.md kinnitatud logo kirjeldus viidi kokku praeguse leegilogoga.
+- Otsus: eestikeelse lauseteksti grammatiliselt korrektset käändevormi „Hämara“ ei muudetud; varasemaid Log.md ajalookirjeid ei kirjutatud ümber.
+- Kontroll: brauseris kontrolliti avalehte, proovilehte ja halduspaneeli. Pealkirjad/logo kuvati kujul „Hämar“; proovilehe lugemispäring toimis ja tagastas tühja avaldatud toodete loendi. Sisselogimist ega ostukorvi toiminguid ei testitud.
+- Tulemus: brändi nähtavad kasutuskohad ühtlustati ilma toote- või ostukorviloogikat muutmata.
+
+## 25.11.2026 – Logo suurtähtedega kuvamise taastamine
+
+- Eesmärk: taastada kinnitatud logo ametlik kuju „HÄMAR“.
+- Tegevused: `header h1` CSS-i `text-transform` seadeks taastati `uppercase`; kirjastiili, 8 px tähevahet, leegisümbolit ega kaart ei muudetud.
+- Kontroll: brauseris kuvati logo kujul „HÄMAR“; kontrolliti `font-weight: 300`, 8 px tähevahet ja `logo-leek.svg` kasutamist.
+- Tulemus: logo suurtähtedega kuvamine taastati. Halduspaneeli pealkiri „Hämar – halduspaneel“ jäi muutmata. Ostukorvi ega sisselogimist ei testitud.
+
+## 25.11.2026 – Halduspaneeli logo lisamine
+
+- Eesmärk: kuvada halduspaneeli ülaosas kinnitatud HÄMARi logo ja eraldi pealkiri „Halduspaneel“.
+- Tegevused: `admin-login.html` kasutab logotüübi leegisümboli ja kaare jaoks olemasolevat `logo-leek.svg` faili; lisatud on eraldi alapealkiri ning mobiilivaate suurus.
+- Kontroll: isoleeritud brauserilehel kontrolliti logo, SVG-dekoratsiooni, „Halduspaneel“ pealkirja ning mobiilivaate 36 px kirjapilti. Sisselogimisväljade väärtusi ei loetud ega kuvata.
+- Tulemus: sisselogimisfunktsioonid, värvid ja turvakontrollid jäid muutmata; sisselogimist ennast ei testitud.
+
+## 25.11.2026 – Sisselogimisväljade nähtavuse kontroll
+
+- Eesmärk: kontrollida e-posti ja parooli väljade nähtavust ning kasutatavust arvuti- ja mobiilivaates.
+- Kontroll: puhtas brauserivaates, ajutise CSS-ita, olid mõlemad väljad nähtavad. 1280 px vaates olid väljad 480 × 44 px; 375 px mobiilivaates 305,6 × 44 px. Kontrolliti piire, sisepolstrit, paigutust, silte, klaviatuurifookust ja horisontaalse ülevoolu puudumist.
+- Privaatsus: sisestusväljade väärtusi ei loetud, kuvata ega salvestatud.
+- Tulemus: väljad olid korras; koodi ei muudetud.

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hämar – administraatori sisselogimine</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #F6F0EA;
+            color: #392E2B;
+        }
+
+        body {
+            margin: 0;
+            padding: 32px 16px;
+        }
+
+        main {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 32px;
+            border: 1px solid #E5D4CB;
+            border-radius: 12px;
+            background: #FFFFFF;
+        }
+
+        h1,
+        h2 {
+            color: #62464A;
+        }
+
+        .branding {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .brand-logo {
+            margin: 0;
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        .brand-logo::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 28px;
+            margin: 8px auto 10px;
+            background-image: url("logo-leek.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .branding h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        form,
+        #admin-panel {
+            display: grid;
+            gap: 16px;
+        }
+
+        #admin-panel[hidden] {
+            display: none;
+        }
+
+        label {
+            display: grid;
+            gap: 6px;
+        }
+
+        input,
+        button {
+            box-sizing: border-box;
+            min-height: 44px;
+            padding: 10px 12px;
+            border: 1px solid #C5A2A1;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        button {
+            background: #62464A;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            cursor: wait;
+            opacity: 0.7;
+        }
+
+        #status {
+            min-height: 24px;
+            padding: 12px;
+            border-radius: 8px;
+            background: #F6F0EA;
+        }
+
+        @media (max-width: 520px) {
+            main {
+                padding: 24px 18px;
+            }
+
+            .brand-logo {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header class="branding">
+            <h1 class="brand-logo">Hämar</h1>
+            <h2>Halduspaneel</h2>
+        </header>
+        <p>Sisselogimine üksi ei anna administraatoriõigusi.</p>
+        <p>Supabase Authi kasutaja peab omama serveris määratud <code>app_metadata.role=admin</code> väärtust. Ilma selleta ligipääs keelatakse.</p>
+        <p>See kontroll ei asenda andmebaasi RLS-reegleid.</p>
+        <p id="status" role="status" aria-live="polite">Valmis sisselogimiseks.</p>
+
+        <form id="login-form">
+            <label for="email">E-posti aadress</label>
+            <input id="email" name="email" type="email" autocomplete="username" required>
+
+            <label for="password">Parool</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+            <button id="login-button" type="submit">Logi sisse</button>
+        </form>
+
+        <section id="admin-panel" hidden>
+            <h2>Administraatoriõigused kinnitatud</h2>
+            <p>Haldusfunktsioonid pole veel lisatud.</p>
+            <button id="logout-button" type="button">Logi välja</button>
+        </section>
+    </main>
+
+    <script>
+        const SUPABASE_URL = "https://opzosebdxyhowkefntkc.supabase.co";
+        const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_ret_6836GV-tMOfpOaOxiA_tEu-GgGN";
+        const loginForm = document.querySelector("#login-form");
+        const loginButton = document.querySelector("#login-button");
+        const adminPanel = document.querySelector("#admin-panel");
+        const logoutButton = document.querySelector("#logout-button");
+        const statusText = document.querySelector("#status");
+
+        function kuvaTeade(teade) {
+            statusText.textContent = teade;
+        }
+
+        function looSupabaseKlient() {
+            return new Promise((resolve, reject) => {
+                const teek = document.createElement("script");
+                teek.src = "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.110.7";
+                teek.onload = () => {
+                    if (!window.supabase ||
+                        typeof window.supabase.createClient !== "function") {
+                        reject(new Error("Supabase'i kliendi loomine ebaõnnestus."));
+                        return;
+                    }
+
+                    resolve(window.supabase.createClient(
+                        SUPABASE_URL,
+                        SUPABASE_PUBLISHABLE_KEY,
+                        {
+                            auth: {
+                                persistSession: true,
+                                autoRefreshToken: true,
+                                detectSessionInUrl: false,
+                                storage: window.sessionStorage
+                            }
+                        }
+                    ));
+                };
+                teek.onerror = () => reject(
+                    new Error("Supabase'i teegi laadimine ebaõnnestus.")
+                );
+                document.head.appendChild(teek);
+            });
+        }
+
+        const supabaseKlient = looSupabaseKlient();
+
+        async function kontrolliAdministraatoriOigust(klient) {
+            const { data, error } = await klient.auth.getUser();
+
+            if (error) {
+                throw error;
+            }
+
+            if (!data.user || data.user.app_metadata?.role !== "admin") {
+                const { error: valjalogimiseViga } = await klient.auth.signOut();
+
+                if (valjalogimiseViga) {
+                    throw new Error(
+                        `Administraatoriõigus puudub ja seanssi ei saanud lõpetada: ${valjalogimiseViga.message}`
+                    );
+                }
+
+                adminPanel.hidden = true;
+                loginForm.hidden = false;
+                kuvaTeade(
+                    "Sisselogimine õnnestus, kuid kasutajal puudub administraatoriõigus."
+                );
+                return;
+            }
+
+            loginForm.hidden = true;
+            adminPanel.hidden = false;
+            kuvaTeade("Administraatoriõigus kinnitati.");
+        }
+
+        loginForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            loginButton.disabled = true;
+            kuvaTeade("Kontrollin sisselogimist ja administraatoriõigust…");
+
+            try {
+                const klient = await supabaseKlient;
+                const vormiAndmed = new FormData(loginForm);
+                const { error } = await klient.auth.signInWithPassword({
+                    email: vormiAndmed.get("email"),
+                    password: vormiAndmed.get("password")
+                });
+
+                if (error) {
+                    throw error;
+                }
+
+                await kontrolliAdministraatoriOigust(klient);
+            } catch (error) {
+                kuvaTeade(`Sisselogimine ebaõnnestus: ${error.message}`);
+            } finally {
+                loginButton.disabled = false;
+            }
+        });
+
+        logoutButton.addEventListener("click", async () => {
+            logoutButton.disabled = true;
+
+            try {
+                const klient = await supabaseKlient;
+                const { error } = await klient.auth.signOut();
+
+                if (error) {
+                    throw error;
+                }
+
+                adminPanel.hidden = true;
+                loginForm.hidden = false;
+                loginForm.reset();
+                kuvaTeade("Oled välja logitud.");
+            } catch (error) {
+                kuvaTeade(`Väljalogimine ebaõnnestus: ${error.message}`);
+            } finally {
+                logoutButton.disabled = false;
+            }
+        });
+
+        (async () => {
+            try {
+                const klient = await supabaseKlient;
+                const { data, error } = await klient.auth.getSession();
+
+                if (error) {
+                    throw error;
+                }
+
+                if (data.session) {
+                    await kontrolliAdministraatoriOigust(klient);
+                }
+            } catch (error) {
+                kuvaTeade(`Seansi kontroll ebaõnnestus: ${error.message}`);
+            }
+        })();
+    </script>
+</body>
+
+</html>
