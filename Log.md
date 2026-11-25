@@ -207,3 +207,17 @@ Järgmine samm: täiustada avalehe tutvustusala ja lisada küünlafoto.
 - Kontroll: puhtas brauserivaates, ajutise CSS-ita, olid mõlemad väljad nähtavad. 1280 px vaates olid väljad 480 × 44 px; 375 px mobiilivaates 305,6 × 44 px. Kontrolliti piire, sisepolstrit, paigutust, silte, klaviatuurifookust ja horisontaalse ülevoolu puudumist.
 - Privaatsus: sisestusväljade väärtusi ei loetud, kuvata ega salvestatud.
 - Tulemus: väljad olid korras; koodi ei muudetud.
+
+## 25.11.2026 – Admini sisselogimislehe tehnilise teksti eemaldamine
+
+- Eesmärk: eemaldada sisselogimislehelt kolm kasutajale nähtavat tehnilist selgitust.
+- Tegevused: eemaldati selgitavad lõigud administraatoriõiguste, `app_metadata.role=admin` ja RLS-i kohta. HÄMARi logo, pealkiri, väljad, Supabase Authi kood ning õiguste kontroll jäid muutmata.
+- Kontroll: brauseris kontrolliti 1280 × 900 ja 375 × 812 vaadet. Logo/leegikaar, pealkiri, väljad ja nupp olid nähtavad; eemaldatud tekstid puudusid ning horisontaalset ülevoolu polnud.
+- Tulemus: kasutajale kuvatav tehniline selgitustekst eemaldati. Päris sisselogimist ei testitud.
+
+## 25.11.2026 – Admini algse teatekasti eemaldamine
+
+- Eesmärk: eemaldada tühi sisselogimise algteade ja selle nähtav teatekast.
+- Tegevused: algne „Valmis sisselogimiseks.“ tekst eemaldati ning tühi `#status` peidetakse CSS-iga. `kuvaTeade` ja Supabase Authi sisselogimise ning administraatoriõiguste kontrolli JavaScripti ei muudetud.
+- Kontroll: brauseris kontrolliti 1280 × 900 ja 375 × 812 vaadet. Algne teatekast oli peidetud; testitud dünaamilise veateate ja administraatoriõiguse kinnituse korral muutus ala nähtavaks. Horisontaalset ülevoolu polnud.
+- Tulemus: vajalikud sisselogimise veateated ja edukinnitused säilivad. Päris sisselogimist ei testitud.

@@ -108,6 +108,10 @@
             background: #F6F0EA;
         }
 
+        #status:empty {
+            display: none;
+        }
+
         @media (max-width: 520px) {
             main {
                 padding: 24px 18px;
@@ -126,10 +130,7 @@
             <h1 class="brand-logo">Hämar</h1>
             <h2>Halduspaneel</h2>
         </header>
-        <p>Sisselogimine üksi ei anna administraatoriõigusi.</p>
-        <p>Supabase Authi kasutaja peab omama serveris määratud <code>app_metadata.role=admin</code> väärtust. Ilma selleta ligipääs keelatakse.</p>
-        <p>See kontroll ei asenda andmebaasi RLS-reegleid.</p>
-        <p id="status" role="status" aria-live="polite">Valmis sisselogimiseks.</p>
+        <p id="status" role="status" aria-live="polite"></p>
 
         <form id="login-form">
             <label for="email">E-posti aadress</label>

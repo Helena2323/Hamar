@@ -150,3 +150,15 @@ Pooleli: ajaloolise võtme ja kustutatud võtme vastavus ning ajaloolise võtme 
 - E-posti ja parooli väljad kontrolliti puhtas brauserivaates arvutis ja mobiilis ilma ajutise CSS-ita; mõlemad olid nähtavad, 44 px kõrged ning klaviatuurifookusega kasutatavad.
 - Mobiilivaates ei esinenud horisontaalset ülevoolu. Sisestusväljade väärtusi ei loetud, kuvata ega salvestatud.
 - Väljad olid korras ja koodimuudatust ei tehtud.
+
+## Admini sisselogimislehe teksti lihtsustamine – 25.11.2026
+
+- Eemaldati kolm kasutajale nähtavat tehnilist selgitust. Logo, „Halduspaneel“, sisselogimisväljad ning Supabase Authi ja administraatoriõiguste JavaScript säilitati.
+- Arvuti- ja mobiilivaadet kontrolliti 1280 × 900 ning 375 × 812 mõõtudes; eemaldatud tekstid puudusid ja horisontaalset ülevoolu polnud.
+- Päris sisselogimist ei testitud.
+
+## Admini algse teatekasti eemaldamine – 25.11.2026
+
+- Tühi algne `#status` ala on peidetud; dünaamiliste veateadete ja edukinnituste kuvamine säilib.
+- Arvuti- ja mobiilivaates kontrolliti, et algset teatekasti pole ning veateate ja õiguse kinnituse teksti korral ilmub teateala nähtavale.
+- Supabase Authi ega administraatoriõiguste kontrolli JavaScripti ei muudetud. Päris sisselogimist ei testitud.
