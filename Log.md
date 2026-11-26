@@ -221,3 +221,11 @@ Järgmine samm: täiustada avalehe tutvustusala ja lisada küünlafoto.
 - Tegevused: algne „Valmis sisselogimiseks.“ tekst eemaldati ning tühi `#status` peidetakse CSS-iga. `kuvaTeade` ja Supabase Authi sisselogimise ning administraatoriõiguste kontrolli JavaScripti ei muudetud.
 - Kontroll: brauseris kontrolliti 1280 × 900 ja 375 × 812 vaadet. Algne teatekast oli peidetud; testitud dünaamilise veateate ja administraatoriõiguse kinnituse korral muutus ala nähtavaks. Horisontaalset ülevoolu polnud.
 - Tulemus: vajalikud sisselogimise veateated ja edukinnitused säilivad. Päris sisselogimist ei testitud.
+
+## 26.11.2026 – Püsivate turvanõuete täiendamine
+
+- Eesmärk: lisada AGENTS.md faili HÄMARi arenduse püsivad turvanõuded.
+- Tegevused: täiendati uute funktsioonide turvakontrolli, saladuste avaldamise keeldu, Supabase'i administraatoriõiguste ja RLS-reeglite kontrolli andmeid muutvate funktsioonide eel, faktide/riskide/teadmata asjaolude eristamist ning nõusolekut turvaseadete ja Giti ajaloo muutmiseks. Täpsustati olemasolevaid dokumenteerimisjuhiseid; varasemad tööreeglid ja logikirjed säilitati.
+- Kontroll: vaadati üle muudatuste diff ja käivitati `git diff --check`; koodi ega Supabase'i seadeid ei muudetud.
+- Tulemus: AGENTS.md, Log.md ja HANDOFF.md kajastavad uusi püsivaid turvanõudeid.
+- Järgmine samm: rakendada neid nõudeid järgmistes arendusetappides.

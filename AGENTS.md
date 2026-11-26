@@ -5,14 +5,17 @@
 - Tööta väikeste ja kontrollitud etappide kaupa.
 - Kasuta lihtsat, arusaadavat ja hooldatavat koodi.
 - Kontrolli tehniliste lahenduste õigsust enne rakendamist.
+- Kontrolli iga uue funktsiooni turvalisust enne selle valmiks lugemist.
 - Testi muudatusi ja dokumenteeri tegelikud tulemused.
 - Ära muuda töötavaid lahendusi põhjuseta.
 - Küsi oluliste muudatuste eel projekti omaniku nõusolekut.
 - Kasuta tokeneid säästlikult ja väldi tarbetut kordamist.
-- Täienda iga tööetapi järel Log.md faili automaatselt eesti keeles ja kronoloogiliselt.
-- Logi kuupäev, eesmärk, tegevused, otsused, tulemused ja pooleliolev töö.
+- Täienda iga tööetapi järel Log.md faili eesti keeles ja kronoloogiliselt; kirjelda kuupäeva, eesmärki, muudatusi, kontrolle, otsuseid, tulemusi ja pooleliolevat tööd.
 - Säilita kõik varasemad logikirjed.
-- Ära salvesta paroole, API võtmeid ega muid saladusi.
+- Ära salvesta saladusi ega avalda paroole, salajasi API-võtmeid, tokeneid või muid tundlikke andmeid.
+- Enne andmeid muutvate Supabase'i funktsioonide lisamist kontrolli administraatoriõigusi ja RLS-reegleid.
+- Erista dokumentatsioonis kontrollitud faktid, võimalikud riskid ja kontrollimata väited; ära esita oletusi faktidena.
+- Ära muuda Supabase'i turvaseadeid ega Giti ajalugu ilma projekti omaniku nõusolekuta.
 - Salvesta kontrollitud muudatused GitHubi projekti omaniku nõusolekul.
-- Uuenda tööetapi lõpus HANDOFF.md faili töö jätkamiseks.
+- Uuenda tööetapi lõpus HANDOFF.md faili, dokumenteerides tehtud muudatused, kontrollid ja järgmised sammud.
 - Selgita tehtut lühidalt ja arusaadavalt eesti keeles.

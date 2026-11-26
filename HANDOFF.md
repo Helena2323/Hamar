@@ -1,6 +1,6 @@
 # Hämara projekti hetkeseis
 
-Uuendatud: 25.11.2026
+Uuendatud: 26.11.2026
 
 ## Tehtud
 
@@ -162,3 +162,13 @@ Pooleli: ajaloolise võtme ja kustutatud võtme vastavus ning ajaloolise võtme 
 - Tühi algne `#status` ala on peidetud; dünaamiliste veateadete ja edukinnituste kuvamine säilib.
 - Arvuti- ja mobiilivaates kontrolliti, et algset teatekasti pole ning veateate ja õiguse kinnituse teksti korral ilmub teateala nähtavale.
 - Supabase Authi ega administraatoriõiguste kontrolli JavaScripti ei muudetud. Päris sisselogimist ei testitud.
+
+## Püsivad turvanõuded – 26.11.2026
+
+- Iga uut funktsiooni tuleb turvalisuse seisukohalt kontrollida enne valmiks lugemist.
+- Saladusi ei salvestata ega avaldata; aruannetes eristatakse kontrollitud faktid, võimalikud riskid ja kontrollimata väited.
+- Enne andmeid muutvate Supabase'i funktsioonide lisamist kontrollitakse administraatoriõigusi ja RLS-reegleid.
+- Supabase'i turvaseadeid ega Giti ajalugu ei muudeta ilma projekti omaniku nõusolekuta.
+- Log.md ja HANDOFF.md peavad kajastama tööetapi muudatusi, kontrolle ja tulemusi.
+
+Kontroll: AGENTS.md juhiseid täiendati olemasolevaid punkte dubleerimata. Muudatusi kontrolliti diff'i ja whitespace'i kontrolliga; koodi, Supabase'i seadeid ega Giti ajalugu ei muudetud.
