@@ -229,3 +229,11 @@ Järgmine samm: täiustada avalehe tutvustusala ja lisada küünlafoto.
 - Kontroll: vaadati üle muudatuste diff ja käivitati `git diff --check`; koodi ega Supabase'i seadeid ei muudetud.
 - Tulemus: AGENTS.md, Log.md ja HANDOFF.md kajastavad uusi püsivaid turvanõudeid.
 - Järgmine samm: rakendada neid nõudeid järgmistes arendusetappides.
+
+## 27.11.2026 – Arendusplaani ja järgmise turvakontrolli täpsustamine
+
+- Eesmärk: viia HANDOFF.md kooskõlla viimaste kokkulepitud tulevikuplaanidega ja märkida vahetu turvakontroll.
+- Tegevused: lisati veel rakendamata tootegaleriid, mobiilimenüü, tellimuse õnnestumise leht, automaatsed tellimuse kinnituse ja saatmise e-kirjad ning halduspaneelist hallatavad hooajalised pakkumised. Toodete, hindade ja fotode haldamine ning hooajalise avalehe sisu olid juba varasemas plaanis ja neid ei dubleeritud. Järgmiseks tööetapiks märgiti `public.tooted` tabeli RLS-i, poliitikate ja ligipääsuõiguste kontroll.
+- Kontroll: loeti üle AGENTS.md, HANDOFF.md ja Log.md; AGENTS.md püsivaid juhiseid ei muudetud. Kontrolliti muudatuste diff'i ning `git diff --check` tulemust. SQL-päringut ei käivitatud.
+- Tulemus: HANDOFF.md eristab planeeritud funktsioone valmis tööst ning ütleb selgelt, et RLS-päring on koostatud, kuid käivitamata. Rakenduse koodi, Supabase'i seadeid ega Giti ajalugu ei muudetud.
+- Järgmine samm: käivitada koostatud ainult lugemiseks mõeldud SQL-päring pärast kasutaja kinnitust ja hinnata tegelikke tulemusi.

@@ -1,6 +1,6 @@
 # Hämara projekti hetkeseis
 
-Uuendatud: 26.11.2026
+Uuendatud: 27.11.2026
 
 ## Tehtud
 
@@ -172,3 +172,19 @@ Pooleli: ajaloolise võtme ja kustutatud võtme vastavus ning ajaloolise võtme 
 - Log.md ja HANDOFF.md peavad kajastama tööetapi muudatusi, kontrolle ja tulemusi.
 
 Kontroll: AGENTS.md juhiseid täiendati olemasolevaid punkte dubleerimata. Muudatusi kontrolliti diff'i ja whitespace'i kontrolliga; koodi, Supabase'i seadeid ega Giti ajalugu ei muudetud.
+
+## Planeeritud tulevased funktsioonid – 27.11.2026
+
+- Staatus: kõik alltoodud funktsioonid on planeeritud; neid ei ole veel rakendatud.
+- Tootegaleriid.
+- Mobiilimenüü.
+- Tellimuse õnnestumise leht.
+- Automaatsed tellimuse kinnituse ja saatmise e-kirjad.
+- Halduspaneelist hallatavad hooajalised pakkumised.
+- Halduspaneelist toodete, hindade ja fotode haldamine ning hooajalise avalehe sisu muutmine on juba varasemalt planeeritud; seda nõuet siin ei dubleerita.
+
+## Järgmine vahetu tööetapp – Supabase'i RLS-i kontroll
+
+- Kontrollida Supabase'i SQL Editoris `public.tooted` tabeli RLS-i olekut, kõigi poliitikate tingimusi ning tabeli ligipääsuõigusi.
+- Copiloti koostatud ainult lugemiseks mõeldud SQL-päring on olemas, kuid seda pole veel käivitatud.
+- Enne tulemuste saamist ei tehta järeldusi poliitikate sisust ega turvalisusest.
