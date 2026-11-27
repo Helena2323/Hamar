@@ -245,3 +245,12 @@ Järgmine samm: täiustada avalehe tutvustusala ja lisada küünlafoto.
 - Kontroll: avati leht brauseris ja kontrolliti nähtava pealkirja täpset kuju. Olemasolev lugemispäring teatas, et ühendus toimib ja avaldatud tooteid pole. See ei ole SQL Editori RLS-kontroll; selle päringu käivitamine on endiselt järgmine samm.
 - Tulemus: nähtav pealkiri vastab soovitud kujule; ühenduse kontrolli funktsionaalsus säilis. Turvaseadeid ei muudetud.
 - Järgmine samm: kontrollida kasutaja kinnituse järel Supabase'i SQL Editoris `public.tooted` tabeli RLS-i, poliitikaid ja õigusi.
+
+## 27.11.2026 – Supabase'i tabeli ja õiguste kontroll
+
+- Eesmärk: dokumenteerida `public.tooted` tabeli RLS-i, õiguste ja testtoote toimingute kontrolli tulemused.
+- Kontrolli tulemused (kasutaja edastatud): RLS oli sisse lülitatud (`relrowsecurity = true`) ning tuvastati viis toodete RLS-reeglit. Anonüümsel kasutajal puudusid tabeli tasemel `UPDATE`- ja `DELETE`-õigused. Administraatori testtoote lisamine, muutmine ja kustutamine õnnestus; testtehingud tühistati `ROLLBACK`-iga, nii et testandmeid ei salvestatud. Tavalise sisseloginud kasutaja muutmise ja kustutamise testid mõjutasid vastavalt 0 rida.
+- Andmete seis: avaldatud toodete päring tagastas 0 toodet ning eraldi kontroll näitas, et tabelis oli 0 toodet. Seetõttu ei loeta avaldatud toodete nähtavuse testi lõplikult tõestatuks. Tühjade tulemustega muutmis- ja kustutamistestid ei tõenda iseenesest kõigi RLS-reeglite toimimist päris ridade korral.
+- Koodikontroll: kolm näidistoodet on `tooted.js` failis, ostukorv kasutab `localStorage`-it, proovileht sisaldab avaldatud toodete lugemispäringut ning administraatori sisselogimislehel puuduvad veel haldusfunktsioonid. Administraatori päris sisselogimist ei märgita testituks.
+- Tulemus: andmeid muutvaid testkäske ega püsivaid testandmeid ei jäetud; failide ega Supabase'i seadistuste muudatusi ei tehtud.
+- Järgmine samm: kontrollida tabeli veerud, andmetüübid ja piirangud; seejärel kontrollida ajaloolise salajase võtme tühistamist, valmistada ette toodete turvaline lisamine, ühendada poe andmed ning jätkata halduspaneeli arendust.

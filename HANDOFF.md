@@ -187,10 +187,20 @@ Kontroll: AGENTS.md juhiseid täiendati olemasolevaid punkte dubleerimata. Muuda
 
 - Nähtav pealkiri muudeti kujule „HÄMAR – Supabase'i ühenduse proov“; brauseri vahelehe pealkiri, kujundus ja Supabase'i ühenduse funktsioonid jäid muutmata.
 - Brauseris kontrolliti, et nähtav pealkiri kuvatakse soovitud kujul. Leht teatas, et ühendus toimib ja avaldatud tooteid veel pole; see oli proovilehe olemasoleva lugemispäringu tulemus.
-- Copiloti koostatud SQL Editori RLS-kontrolli päringut pole endiselt käivitatud.
 
-## Järgmine vahetu tööetapp – Supabase'i RLS-i kontroll
+## Supabase'i `public.tooted` kontroll – 27.11.2026
 
-- Kontrollida Supabase'i SQL Editoris `public.tooted` tabeli RLS-i olekut, kõigi poliitikate tingimusi ning tabeli ligipääsuõigusi.
-- Copiloti koostatud ainult lugemiseks mõeldud SQL-päring on olemas, kuid seda pole veel käivitatud.
-- Enne tulemuste saamist ei tehta järeldusi poliitikate sisust ega turvalisusest.
+- Kasutaja edastatud kontrollitulemuse järgi on tabeli RLS sisse lülitatud (`relrowsecurity = true`) ja tuvastati viis toodete RLS-reeglit. Reeglite täielikke tingimusi siin ei dokumenteeritud.
+- Administraatori testtoote lisamise, muutmise ja kustutamise test õnnestus. Testtehingud lõpetati `ROLLBACK`-iga, seega testandmeid ei salvestatud.
+- Anonüümsel kasutajal puuduvad tabeli tasemel `UPDATE`- ja `DELETE`-õigused.
+- Tavalise sisseloginud kasutaja muutmise ja kustutamise testid andsid vastavalt 0 muudetud ja 0 kustutatud rida. Seda tulemust ei esitata eraldi tõendina kõigi RLS-reeglite turvalisuse kohta.
+- Avaldatud toodete päring tagastas 0 toodet ning eraldi loendus kinnitas, et tabelis oli 0 toodet. Seetõttu ei tõesta avaldatud toodete nähtavuse kontroll poliitika toimimist olemasolevate ridade korral.
+- Administraatori testtoote CRUD-test ei tõenda `admin-login.html` päris kasutajaga sisselogimist; see on endiselt kontrollimata.
+
+## Järgmised sammud
+
+1. Kontrollida `public.tooted` tabeli veerud, andmetüübid ja piirangud.
+2. Kontrollida Giti ajaloos olnud salajase API-võtme tühistamise staatust. Varasema võtme ja kustutatud võtme vastavus on teadmata.
+3. Valmistada ette kolme näidistoote turvaline lisamine Supabase'i; enne tehingut kinnitada skeem ja õigused.
+4. Ühendada poe tooted Supabase'i andmetega, säilitades olemasoleva ostukorvi, toote-ID-d ja kujunduse.
+5. Jätkata administraatori halduspaneeli arendamist, jõustades andmebaasiõigused RLS-i või usaldatud serveripoolse kontrolliga.
