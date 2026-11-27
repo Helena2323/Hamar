@@ -237,3 +237,11 @@ Järgmine samm: täiustada avalehe tutvustusala ja lisada küünlafoto.
 - Kontroll: loeti üle AGENTS.md, HANDOFF.md ja Log.md; AGENTS.md püsivaid juhiseid ei muudetud. Kontrolliti muudatuste diff'i ning `git diff --check` tulemust. SQL-päringut ei käivitatud.
 - Tulemus: HANDOFF.md eristab planeeritud funktsioone valmis tööst ning ütleb selgelt, et RLS-päring on koostatud, kuid käivitamata. Rakenduse koodi, Supabase'i seadeid ega Giti ajalugu ei muudetud.
 - Järgmine samm: käivitada koostatud ainult lugemiseks mõeldud SQL-päring pärast kasutaja kinnitust ja hinnata tegelikke tulemusi.
+
+## 27.11.2026 – Supabase'i proovilehe pealkirja uuendamine
+
+- Eesmärk: muuta proovilehe nähtav pealkiri kujule „HÄMAR – Supabase'i ühenduse proov“.
+- Tegevused: muudeti ainult `supabase-proov.html` nähtavat `h1` pealkirja; vahelehe pealkiri, kujundus ja Supabase'i ühenduse funktsioonid jäid muutmata.
+- Kontroll: avati leht brauseris ja kontrolliti nähtava pealkirja täpset kuju. Olemasolev lugemispäring teatas, et ühendus toimib ja avaldatud tooteid pole. See ei ole SQL Editori RLS-kontroll; selle päringu käivitamine on endiselt järgmine samm.
+- Tulemus: nähtav pealkiri vastab soovitud kujule; ühenduse kontrolli funktsionaalsus säilis. Turvaseadeid ei muudetud.
+- Järgmine samm: kontrollida kasutaja kinnituse järel Supabase'i SQL Editoris `public.tooted` tabeli RLS-i, poliitikaid ja õigusi.

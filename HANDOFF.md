@@ -183,6 +183,12 @@ Kontroll: AGENTS.md juhiseid täiendati olemasolevaid punkte dubleerimata. Muuda
 - Halduspaneelist hallatavad hooajalised pakkumised.
 - Halduspaneelist toodete, hindade ja fotode haldamine ning hooajalise avalehe sisu muutmine on juba varasemalt planeeritud; seda nõuet siin ei dubleerita.
 
+## Supabase'i proovilehe pealkiri – 27.11.2026
+
+- Nähtav pealkiri muudeti kujule „HÄMAR – Supabase'i ühenduse proov“; brauseri vahelehe pealkiri, kujundus ja Supabase'i ühenduse funktsioonid jäid muutmata.
+- Brauseris kontrolliti, et nähtav pealkiri kuvatakse soovitud kujul. Leht teatas, et ühendus toimib ja avaldatud tooteid veel pole; see oli proovilehe olemasoleva lugemispäringu tulemus.
+- Copiloti koostatud SQL Editori RLS-kontrolli päringut pole endiselt käivitatud.
+
 ## Järgmine vahetu tööetapp – Supabase'i RLS-i kontroll
 
 - Kontrollida Supabase'i SQL Editoris `public.tooted` tabeli RLS-i olekut, kõigi poliitikate tingimusi ning tabeli ligipääsuõigusi.
