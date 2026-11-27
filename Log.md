@@ -254,3 +254,11 @@ Järgmine samm: täiustada avalehe tutvustusala ja lisada küünlafoto.
 - Koodikontroll: kolm näidistoodet on `tooted.js` failis, ostukorv kasutab `localStorage`-it, proovileht sisaldab avaldatud toodete lugemispäringut ning administraatori sisselogimislehel puuduvad veel haldusfunktsioonid. Administraatori päris sisselogimist ei märgita testituks.
 - Tulemus: andmeid muutvaid testkäske ega püsivaid testandmeid ei jäetud; failide ega Supabase'i seadistuste muudatusi ei tehtud.
 - Järgmine samm: kontrollida tabeli veerud, andmetüübid ja piirangud; seejärel kontrollida ajaloolise salajase võtme tühistamist, valmistada ette toodete turvaline lisamine, ühendada poe andmed ning jätkata halduspaneeli arendust.
+
+## 27.11.2026 – Supabase'i API-võtme turvakontroll
+
+- Eesmärk: kontrollida repositooriumi praegust sisu ja kättesaadavat Giti ajalugu ajaloolise Supabase'i võtme osas.
+- Tulemus: ajalooline võti oli `sb_secret_` tüüpi, mitte `service_role` JWT. Selle väärtust ei kopeeritud ega testitud. Kättesaadava Giti ajaloo järgi asus leid commit'is `97495bb25ef903e6c4531db405387bc64b8c9873`, mis ei kuulu `main`-i ega `origin/main`-i ajalukku ja on leitav ainult kohalikust checkpoint-viitest; kontroll ei leidnud tõendit, et see jõudis GitHubi.
+- Praegune seis: kontrollitud projektifailides kasutatakse brauserisse sobivaid publishable-võtmeid; `sb_secret_` ega `service_role` väärtust praegustes failides ei tuvastatud.
+- Tühistamise staatus: varasem dokumentatsioon ütleb, et vaikimisi Secret API key kustutati ja võtmete loend jäi tühjaks, kuid ajaloolist võtit kustutatuga ei võrreldud. Seetõttu ei märgita just selle võtme tühistamist kinnitatuks.
+- Järgmised sammud: alustada Supabase'i Dashboardis aktiivsete Secret API keys loendi kontrollist; seejärel kontrollida `public.tooted` tabeli skeemi. Skeemi jaoks koostatud ainult lugemiseks SQL-päringut pole veel käivitatud. Pärast skeemi kinnitamist valmistada ette kolme näidistoote turvaline üleviimine ning jätkata halduspaneeli arendamist.

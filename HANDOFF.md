@@ -197,10 +197,17 @@ Kontroll: AGENTS.md juhiseid täiendati olemasolevaid punkte dubleerimata. Muuda
 - Avaldatud toodete päring tagastas 0 toodet ning eraldi loendus kinnitas, et tabelis oli 0 toodet. Seetõttu ei tõesta avaldatud toodete nähtavuse kontroll poliitika toimimist olemasolevate ridade korral.
 - Administraatori testtoote CRUD-test ei tõenda `admin-login.html` päris kasutajaga sisselogimist; see on endiselt kontrollimata.
 
+## Supabase'i API-võtme turvakontroll – 27.11.2026
+
+- Giti ajaloost leiti `sb_secret_` tüüpi Supabase'i võti; see ei olnud `service_role` JWT. Võtme väärtust ei dokumenteerita.
+- Kättesaadava kohaliku Giti ajaloo järgi asus leid commit'is `97495bb25ef903e6c4531db405387bc64b8c9873`, mis ei ole `main`-i ega `origin/main`-i ajaloos; leidu nähti ainult kohalikus checkpoint-viites. Kontroll ei leidnud tõendit, et see commit jõudis GitHubi, kuid ei välista teisi kustutatud harusid või koopiaid.
+- Praegustes failides kasutatakse ainult brauserisse sobivaid publishable-võtmeid; aktiivset `sb_secret_` ega `service_role` võtit ei tuvastatud.
+- 25.11.2026 dokumenteeriti vaikimisi Secret API key kustutamine ja tühjade võtmete loend, kuid ajaloolist võtit kustutatuga ei võrreldud. Just selle võtme tühistamine on seetõttu kinnitamata.
+
 ## Järgmised sammud
 
-1. Kontrollida `public.tooted` tabeli veerud, andmetüübid ja piirangud.
-2. Kontrollida Giti ajaloos olnud salajase API-võtme tühistamise staatust. Varasema võtme ja kustutatud võtme vastavus on teadmata.
+1. Alustada Supabase'i Dashboardis aktiivsete **Secret API keys** võtmete kontrollimisest; võtmeväärtusi ei kopeerita ega jagata ning võtmeid ei muudeta.
+2. Kontrollida `public.tooted` tabeli veerud, andmetüübid, vaikeväärtused ja piirangud. Selleks on koostatud ainult lugemiseks SQL-päring, kuid seda pole veel käivitatud.
 3. Valmistada ette kolme näidistoote turvaline lisamine Supabase'i; enne tehingut kinnitada skeem ja õigused.
 4. Ühendada poe tooted Supabase'i andmetega, säilitades olemasoleva ostukorvi, toote-ID-d ja kujunduse.
 5. Jätkata administraatori halduspaneeli arendamist, jõustades andmebaasiõigused RLS-i või usaldatud serveripoolse kontrolliga.
