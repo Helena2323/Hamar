@@ -262,3 +262,10 @@ Järgmine samm: täiustada avalehe tutvustusala ja lisada küünlafoto.
 - Praegune seis: kontrollitud projektifailides kasutatakse brauserisse sobivaid publishable-võtmeid; `sb_secret_` ega `service_role` väärtust praegustes failides ei tuvastatud.
 - Tühistamise staatus: varasem dokumentatsioon ütleb, et vaikimisi Secret API key kustutati ja võtmete loend jäi tühjaks, kuid ajaloolist võtit kustutatuga ei võrreldud. Seetõttu ei märgita just selle võtme tühistamist kinnitatuks.
 - Järgmised sammud: alustada Supabase'i Dashboardis aktiivsete Secret API keys loendi kontrollist; seejärel kontrollida `public.tooted` tabeli skeemi. Skeemi jaoks koostatud ainult lugemiseks SQL-päringut pole veel käivitatud. Pärast skeemi kinnitamist valmistada ette kolme näidistoote turvaline üleviimine ning jätkata halduspaneeli arendamist.
+
+## 27.11.2026 – Turvaülevaate kokkuvõtte koostamine
+
+- Eesmärk: talletada varasema turvakontrolli leiud ühes aruandes, avaldamata võtmete väärtusi.
+- Tegevused: lisati `SECURITY-REVIEW.md`, milles on eristatud ajaloolise `sb_secret_` võtme risk, administraatori kliendipoolse rollikontrolli piirang, `public.tooted` RLS-i kontrollimata tingimused ning tulevase e-poe kliendipoolse ostukorvi risk. Aruandesse lisati ka kontrollitud kaitsemeetmed ja kontrollimata asjaolud.
+- Kontroll: vaadati üle AGENTS.md juhised, tööpuu ning aruande koodiviited. Koodi, Supabase'i seadeid ega võtmeid ei muudetud; võtme väärtust aruandesse ei lisatud.
+- Tulemus: dokumentatsioon koondab varasema kontrolli tõendid ja piirangud; järgmine töö algab endiselt aktiivsete Secret API keys kontrolliga Supabase'i Dashboardis.

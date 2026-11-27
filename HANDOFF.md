@@ -203,6 +203,7 @@ Kontroll: AGENTS.md juhiseid täiendati olemasolevaid punkte dubleerimata. Muuda
 - Kättesaadava kohaliku Giti ajaloo järgi asus leid commit'is `97495bb25ef903e6c4531db405387bc64b8c9873`, mis ei ole `main`-i ega `origin/main`-i ajaloos; leidu nähti ainult kohalikus checkpoint-viites. Kontroll ei leidnud tõendit, et see commit jõudis GitHubi, kuid ei välista teisi kustutatud harusid või koopiaid.
 - Praegustes failides kasutatakse ainult brauserisse sobivaid publishable-võtmeid; aktiivset `sb_secret_` ega `service_role` võtit ei tuvastatud.
 - 25.11.2026 dokumenteeriti vaikimisi Secret API key kustutamine ja tühjade võtmete loend, kuid ajaloolist võtit kustutatuga ei võrreldud. Just selle võtme tühistamine on seetõttu kinnitamata.
+- Turvaülevaate koondaruanne on failis [SECURITY-REVIEW.md](./SECURITY-REVIEW.md); see eristab kinnitatud asjaolud, võimalikud riskid ja kontrollimata väited.
 
 ## Järgmised sammud
 
